@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Registrasi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body class="bg-secondary"> 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 p-4 bg-warning" style="border-radius: 2%;">
+                <h1 class="text-center mb-4"><strong>Form Registrasi</strong></h1>
+                <form>
+                    <div class="form-group">
+                        <label for="nama">Nama:</label>
+                        <input type="text" class="form-control" id="nama" name="nama">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="no-telepon">No Telepon:</label>
+                        <input type="text" class="form-control" id="no-telepon" name="no-telepon">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jenis-kelamin">Jenis Kelamin:</label>
+                        <select class="form-control" id="jenis-kelamin" name="jenis-kelamin">
+                            <option value="laki-laki">Laki-laki</option>
+                            <option value="perempuan">Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat-website">Alamat Website:</label>
+                        <input type="text" class="form-control" id="alamat-website" name="alamat-website">
+                    </div>
+
+                    <button type="submit" class="btn btn-dark" onclick="validateForm()">Daftar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Validasi Nama
+            var nama = document.getElementById("nama").value;
+            if (nama == "") {
+                alert("Nama harus diisi");
+                return false;
+            }
+
+            // Validasi Username
+            var username = document.getElementById("username").value;
+            if (username == "") {
+                alert("Username harus diisi");
+                return false;
+            }
+
+            // Validasi Email
+            var email = document.getElementById("email").value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Email tidak valid");
+                return false;
+            }
+
+            // Validasi Password
+            var passwordContain = document.getElementById("password").value;
+            if (passwordContain == "") {
+                alert("Password harus diisi");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <br><br><br><br><br>
+</body>
+
+</html>
